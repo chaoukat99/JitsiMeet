@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Jitsi Meeting</title>
+</head>
+<body>
+    <h1>Jitsi Meeting</h1>
+
+    <!-- The container for the iframe -->
+    <div id="meeting-container" style="width: 100%; height: 600px;">
+        <iframe id="jitsi-iframe" allow="camera; microphone; fullscreen" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        // Function to generate a random meeting name
+        function generateMeetingName() {
+            return 'Meeting_' + Math.random().toString(36).substring(2, 15);
+        }
+
+        // Generate a random room name
+        const roomName = generateMeetingName();
+
+        // Jitsi server URL
+        const domain = "https://meet.jit.si/";
+
+        // Complete meeting URL
+        const meetingURL = domain + roomName;
+
+        // Set the src of the iframe to the generated meeting URL
+        document.getElementById('jitsi-iframe').src = meetingURL;
+
+        // Log the meeting URL
+        console.log("Meeting URL:", meetingURL);
+    </script>
+</body>
+</html>

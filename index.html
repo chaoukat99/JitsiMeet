@@ -1,38 +1,24 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed Jitsi Meeting</title>
-</head>
-<body>
-    <h1>Jitsi Meeting</h1>
-
-    <!-- The container for the iframe -->
-    <div id="meeting-container" style="width: 100%; height: 600px;">
-        <iframe id="jitsi-iframe" allow="camera; microphone; fullscreen" style="width: 100%; height: 100%;" frameborder="0"></iframe>
-    </div>
-
-    <script>
-        // Function to generate a random meeting name
-        function generateMeetingName() {
-            return 'Meeting_' + Math.random().toString(36).substring(2, 15);
-        }
-
-        // Generate a random room name
-        const roomName = generateMeetingName();
-
-        // Jitsi server URL
-        const domain = "https://meet.jit.si/";
-
-        // Complete meeting URL
-        const meetingURL = domain + roomName;
-
-        // Set the src of the iframe to the generated meeting URL
-        document.getElementById('jitsi-iframe').src = meetingURL;
-
-        // Log the meeting URL
-        console.log("Meeting URL:", meetingURL);
+<html>
+  <head>
+    <script src='https://8x8.vc/vpaas-magic-cookie-85e4b0ae07764dd6b1d1dd009b652f5a/external_api.js' async></script>
+    <style>html, body, #jaas-container { height: 100%; }</style>
+    <script type="text/javascript">
+      window.onload = () => {
+        const api = new JitsiMeetExternalAPI("8x8.vc", {
+          roomName: "vpaas-magic-cookie-85e4b0ae07764dd6b1d1dd009b652f5a/ArchitecteSaid-room",
+          parentNode: document.querySelector('#jaas-container'),
+                        // Make sure to include a JWT if you intend to record,
+                        // make outbound calls or use any other premium features!
+                        // jwt: "eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtODVlNGIwYWUwNzc2NGRkNmIxZDFkZDAwOWI2NTJmNWEvNzY1OTgzLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImlzcyI6ImNoYXQiLCJpYXQiOjE3MjczNjgwNDcsImV4cCI6MTcyNzM3NTI0NywibmJmIjoxNzI3MzY4MDQyLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtODVlNGIwYWUwNzc2NGRkNmIxZDFkZDAwOWI2NTJmNWEiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOmZhbHNlLCJvdXRib3VuZC1jYWxsIjpmYWxzZSwic2lwLW91dGJvdW5kLWNhbGwiOmZhbHNlLCJ0cmFuc2NyaXB0aW9uIjpmYWxzZSwicmVjb3JkaW5nIjpmYWxzZX0sInVzZXIiOnsiaGlkZGVuLWZyb20tcmVjb3JkZXIiOmZhbHNlLCJtb2RlcmF0b3IiOnRydWUsIm5hbWUiOiJUZXN0IFVzZXIiLCJpZCI6Imdvb2dsZS1vYXV0aDJ8MTE4MDAxMDE3MDc2NTU1ODIwMDUyIiwiYXZhdGFyIjoiIiwiZW1haWwiOiJ0ZXN0LnVzZXJAY29tcGFueS5jb20ifX0sInJvb20iOiIqIn0.XhhLXt0GDwVNYDMlXFZxSOfOzl2-7X6hJqq5I5q4OPsQDBuOcPxep3K3sw9kHOMstrJcauhHUNlEKL-O_MPHMcJfuTybfdU3vgPbmsBmPwT3mWoOJPXYX04GdEFHCJeFX7x45xtaOBdYLyGpRkPc2PzC8eHveYTRMnPmbmJRFzDcc66dYfk0DZCfZhB_8fic084kUawpKbvZIs3afrXc9jVesnR6e7eiUbLgcmbDta6AspCQyLE5-y7mgaMKiIiOl4q4ggy7DnvsijrfMrbYBLBl0Qa2cfpmVxp-XABYZ3rjULJVv88Z-CnhXdS66R52E-chzhF0pNaPIsUCy9kTGQ"
+        });
+      }
     </script>
+  </head>
+  <body>
+
+    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, itaque.</h1>
+    <div id="jaas-container" ></div>
 </body>
 </html>
